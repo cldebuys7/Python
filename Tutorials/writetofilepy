@@ -1,0 +1,24 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Mar  1 02:21:58 2019
+
+@author: cldebuys
+"""
+
+filehandle = open("helloworld.txt", "w")  
+filebuffer = ["a first line of text", "a second line of text", "a third line"]  
+filehandle.writelines(filebuffer)  
+filehandle.close()
+
+with open('helloworld.py', 'w') as filehandle:  
+    filebuffer = ["a line of text", "\ta tabbed line of text", "a third line"]
+    filehandle.writelines("%s\n" % line for line in filebuffer)
+    
+with open('test_func.py', 'w') as filehandle:  
+    filebuffer = ["from sympy import Matrix, cos, sin",
+                  "",
+                  "def ode_fun(t,y):",
+                  "",
+                  "\treturn "+"y[0]+y[1]**2"]
+    filehandle.writelines("%s\n" % line for line in filebuffer)
